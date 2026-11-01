@@ -2,35 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    background: #ffffff;
-    color: #0a2a1a;
-  }
-  :focus-visible {
-    outline: 2px solid #e11d2e;
-    outline-offset: 2px;
-  }
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
-.ride-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.ride-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 30px -12px rgb(10 42 26 / 0.25);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .ride-card,
-  .ride-card:hover {
-    transition: none;
-    transform: none;
-  }
+/* Ensure images and flex containers respect boundaries */
+img {
+  max-width: 100%;
+  height: auto;
 }
